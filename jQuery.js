@@ -80,11 +80,26 @@ $(function () {
 	//random position
 	$("#fruit1").css({"left":Math.round(Math.random()*260),"top":-60})
 
-	//generate a random step
+	//generate a random step(*speed)
 	step = Math.round(Math.random()*5)+1;
 
 	//move down fruit by one step evry 100msec
 	action = setInterval(function () {
 		$("#fruit1").css("top", $("#fruit1").position().top + step)
+
+		//ceck if the friue is too low
+		if ($("#fruit1").position().top > $("#CatchBox").height()){
+			//check any trails left
+			if(trailsleft>1){
+				$("#fruit1").show();
+				randomFruit();
+				$("#fruit1").css({"left":Math.round(Math.random()*260),"top":-60})
+				step = Math.round(Math.random()*5)+1;
+			}else{
+				$("#Gameover").show;
+			}
+		}else{
+
+		}
 	},15)
 }
