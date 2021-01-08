@@ -1,0 +1,90 @@
+var playing = false;
+var score;
+var trailsleft = 3;
+var fruits = ["apple","banana","cherry","heart","mongo"];
+var step;
+var action;
+
+$(function () {
+	//click on start and reset button
+	$("#startReseat").click(function () {
+
+		//are we playing
+		if(playing == true){
+
+			//reload the page
+			location.reload();
+
+		//we are not playing
+		}else {
+			playing = true;
+
+			//set score to 0
+			score=0;
+			$("#scoreValue").html(score);
+
+			//show trails left
+			$("#timeRemaning").show();
+			addHearths ();
+
+			//start to reset game
+			$("#startReseat").text('Reset Game');
+
+			//start sending fruit
+			startFruit ();
+		}
+	})
+
+
+
+
+//click on start and reaset button
+	//Are we playing
+		//reload the page
+	//we are not playing
+		//show trials left
+		//change bottom text to "reaset game"
+		//1.creat a random fruit
+		//define a random step
+		//2.move fruit down one step evry 30 sec
+			//is fruit too low?
+				//no-->reapet nmb2.
+				//yes-->any trials left?
+					//yes-->reapet nmb1.
+					//no-->show:gameover&button text:start game
+		//slise a fruit
+			//play sound
+			//explode fruit
+
+ //functions
+ 
+ //add hearth
+ function addHearths () {
+	for (var i = 0; i < trailsleft ; i++) {
+		$("#timeRemaning").append('<img src="images/heart.png" class="life">')
+	}
+ }
+})
+
+ //random fruit
+ function randomFruit () {
+ 	$("#fruit1").attr({
+ 		src: 'images/'+fruits[Math.round(Math.random()*4)] +'.png'	
+ 	});
+ }
+
+ function startFruit () {
+	$("#fruit1").show();
+	randomFruit();
+
+	//random position
+	$("#fruit1").css({"left":Math.round(Math.random()*260),"top":-60})
+
+	//generate a random step
+	step = Math.round(Math.random()*5)+1;
+
+	//move down fruit by one step evry 100msec
+	action = setInterval(function () {
+		$("#fruit1").css("top", $("#fruit1").position().top + step)
+	},15)
+}
