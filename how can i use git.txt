@@ -1,0 +1,134 @@
+
+<--create file-->
+poorya@DESKTOP-9IS7727 MINGW64 ~
+$ mkdir fileName
+
+<--change git path-->
+poorya@DESKTOP-9IS7727 MINGW64 ~
+$ cd temp
+
+<--make git path-->
+poorya@DESKTOP-9IS7727 MINGW64 ~/temp
+$ git init
+Initialized empty Git repository in C:/Users/poorya/temp/.git/
+
+<--git sicthution-->
+poorya@DESKTOP-9IS7727 MINGW64 ~/temp (master)
+$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+
+<--make new file and text in firstline-->
+poorya@DESKTOP-9IS7727 MINGW64 ~/temp (master)
+$ echo "first line"> index.html
+
+
+<--add to stage all changes-->
+poorya@DESKTOP-9IS7727 MINGW64 ~/temp (master)
+$ git add -A
+
+<--make commite for all of the changes in the stages-->
+poorya@DESKTOP-9IS7727 MINGW64 ~/temp (master)
+$ git commit -m 'creat new file'
+
+
+<--all of commites-->
+poorya@DESKTOP-9IS7727 MINGW64 ~/temp (master)
+$ git log
+
+
+poorya@DESKTOP-9IS7727 MINGW64 ~/temp (master)
+$ git diff
+
+poorya@DESKTOP-9IS7727 MINGW64 ~/temp (master)
+$ git diff HEAD
+
+//ican not use diff command -> im install cygwin -> but i can not use diff yet
+
+//i search in google i cant use diff -> i found it -> in linux :git diff HEAD = in windows:git log -p
+
+
+<--show all chenges-->
+$ git log -p
+
+
+<--exist file on stage-->
+$ git reset filename 
+
+<--exiting file in head ,even in unstage to back-->
+$ git checkout -- filename 
+
+// for using git checkout i had a problem so search how instal unix plase (linux)
+-> then i found it --> i instal cygwin again but now i install cygwin package too (unix)
+->so i go ahead with instroctions 
+1-hit propertis in mycumputer
+2-hit in left Advanced system setting
+3-Environment variable
+4-in System variable
+5-find path and edit 
+6-add C:\Cygwin64\bin; on ending on it;
+then you can use git diff HEAD
+
+//branches
+
+<--make branch-->
+$ git branch nameOfbranch
+
+<--go to one branch-->
+$ git checkout nameOfbranch
+
+<--dellet one branch-->
+$ git branch -d nameOfbranch
+
+<--all of branches-->
+$ git branch
+
+<--merge one branch to master-->
+$ git merge nameOfbranch
+
+<--back foolder directory-->
+cd ..
+
+<--go to specially foolder-->
+//you should go ahead step by step
+1-$ cd C:\cygwin64
+2-$ cd home
+3-$ cd poorya
+4-$ cd Hello-world
+poorya@DESKTOP-9IS7727 MINGW64 /c/cygwin64/home/poorya/Hello-world (main)
+$ 
+
+<--clone project frome github-->
+$ git clone  https://github.com/pooya2293/Hello-world.git (your project Address)
+
+<--push (PC to net)-->
+$ git push origin master(branch name)
+
+<--pull (net to PC)
+$ git pull origin master(branch name)
+
+//actully when you clone some address creat adirectorry from reipository(in PC) and also a remote name of origin (in NET)
+
+<--add remote-->
+$ git remote add origin(remoteName) http://github.com/Hello-world(remoteAdress)
+
+<-- tag-->
+//when you use tag that the version of releasable file release
+$ git tag -a v2.0(nameOftag) -m 'second version tango'
+
+<--show all tags-->
+$ git tag
+
+//you can tag older version of commit too
+<--tag old commit version-->
+$ git tag -a v1.8 db234hg52123bjk3213421(commite id) -m 'its old version bingo'
+
+<--show all tag start with v-->
+$ git tag -l "v*"
+
+<--show what is in the tag-->
+$ git show v1.8
