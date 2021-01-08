@@ -61,6 +61,7 @@ $(function () {
  //add hearth
  function addHearths () {
 	for (var i = 0; i < trailsleft ; i++) {
+		$("#timeRemaning").empty();
 		$("#timeRemaning").append('<img src="images/heart.png" class="life">')
 	}
  }
@@ -71,6 +72,11 @@ $(function () {
  	$("#fruit1").attr({
  		src: 'images/'+fruits[Math.round(Math.random()*4)] +'.png'	
  	});
+ }
+
+ //stop actions up to down fruit
+ function stopAction () {
+ 	clearInterval(action);
  }
 
  function startFruit () {
@@ -95,11 +101,21 @@ $(function () {
 				randomFruit();
 				$("#fruit1").css({"left":Math.round(Math.random()*260),"top":-60})
 				step = Math.round(Math.random()*5)+1;
-			}else{
-				$("#Gameover").show;
-			}
-		}else{
+				//trails reduse by one
+				trailsleft--
 
+				//populate trails left box
+				addHearths ()
+
+			}else{
+				playing== false;
+				$("#Gameover").show();
+				//show score in gameover box
+				$("#Gameover").html('Game Over'+ '<br> your score is: '+score)
+				//stop sending fruit
+				stopAction ();
+				$('fruit1').hide();
+			}
 		}
 	},15)
 }
