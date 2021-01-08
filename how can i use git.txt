@@ -132,3 +132,10 @@ $ git tag -l "v*"
 
 <--show what is in the tag-->
 $ git show v1.8
+
+<--push tags-->
+$ git push origin --tags
+
+//you can checkout some version for use (but it will not create a branch)
+<--checkout tags-->
+$ git checkout v1.8
