@@ -111,6 +111,10 @@ $ git push origin master(branch name)
 <--pull (net to PC)
 $ git pull origin master(branch name)
 
+//you can use -u for freezing som command 
+<--freeze  command-->
+$ git push -u origin main
+
 //actully when you clone some address creat adirectorry from reipository(in PC) and also a remote name of origin (in NET)
 
 <--add remote-->
@@ -139,3 +143,4 @@ $ git push origin --tags
 //you can checkout some version for use (but it will not create a branch)
 <--checkout tags-->
 $ git checkout v1.8
+
