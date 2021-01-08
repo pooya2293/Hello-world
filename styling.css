@@ -37,7 +37,8 @@ html {
 #timeRemaning {
  left: 15px;
  top: 20px;
- display: none;
+ width:200px;
+ display: block;
 }
 
 #corract {
@@ -170,7 +171,7 @@ html {
 
 #Gameover {
 	
-	line-height: 170px;
+	line-height: 80px;
 	width: 430px;
 	height: 190px;
 	background-color: #fa4;
@@ -182,7 +183,7 @@ html {
 	top: 140px;
 	left: 60px;
 	z-index: 2;
-	display: none;
+	display:none;
 	
 }
 
@@ -195,5 +196,5 @@ html {
 .fruits{
 	height:60px;
 	width:60px;
-	position:absolute;
+	position: absolute;
 }
