@@ -37,8 +37,8 @@ html {
 #timeRemaning {
  left: 15px;
  top: 20px;
- width:200px;
- display: block;
+ width:70px;
+ display: none;
 }
 
 #corract {
