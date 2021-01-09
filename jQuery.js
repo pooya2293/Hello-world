@@ -40,8 +40,11 @@ $(function () {
 
 
 //click on start and reaset button
-	//Are we playing
+	// we playing
 		//reload the page
+		//if mouse hovering  
+			//slise fruit 
+			//increas score
 	//we are not playing
 		//show trials left
 		//change bottom text to "reaset game"
@@ -49,13 +52,20 @@ $(function () {
 		//define a random step
 		//2.move fruit down one step evry 30 sec
 			//is fruit too low?
-				//no-->reapet nmb2.
-				//yes-->any trials left?
+			//yes-->do any trials left?
 					//yes-->reapet nmb1.
 					//no-->show:gameover&button text:start game
+					//reduse trails
+			//no-->reapet nmb2.
 		//slise a fruit
 			//play sound
 			//explode fruit
+			
+ $("#fruit1").mouseover(function () {
+ 	score ++;
+ 	$("#scoreValue").html(score);
+ })
+
 
  //functions
  
