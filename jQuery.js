@@ -66,7 +66,6 @@ $(function () {
 		$("#timeRemaning").append('<img src="images/heart.png" class="life">')
 	}
  }
-})
 
  //random fruit
  function randomFruit () {
@@ -106,7 +105,7 @@ $(function () {
 				trailsleft --;
 
 				//populate trails left box
-				addHearths ();
+				addHearths();
 
 			}else{
 				playing== false;
@@ -120,3 +119,4 @@ $(function () {
 		}
 	},15)
 }
+});
