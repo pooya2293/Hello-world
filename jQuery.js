@@ -64,6 +64,7 @@ $(function () {
  $("#fruit1").mouseover(function () {
  	score ++;
  	$("#scoreValue").html(score);
+ 	$('#sliseSound')[0].play()
  })
 
 
