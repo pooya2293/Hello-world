@@ -67,7 +67,7 @@ $(function () {
  	$('#sliseSound')[0].play();
  	clearInterval(action);
  	$("#fruit1").hide("explode",500);
- 	setTimeout(startFruit (), 500);
+ 	setTimeout(startFruit,500);
  })
 
 
