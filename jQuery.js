@@ -1,6 +1,6 @@
 var playing = false;
 var score;
-var trailsleft = 3;
+var trailsleft;
 var fruits = ["apple","banana","cherry","heart","mongo"];
 var step;
 var action;
@@ -25,6 +25,7 @@ $(function () {
 
 			//show trails left
 			$("#timeRemaning").show();
+			trailsleft = 3;
 			addHearths ();
 
 			//start to reset game
@@ -60,8 +61,8 @@ $(function () {
  
  //add hearth
  function addHearths () {
+ 	$("#timeRemaning").empty();
 	for (var i = 0; i < trailsleft ; i++) {
-		$("#timeRemaning").empty();
 		$("#timeRemaning").append('<img src="images/heart.png" class="life">')
 	}
  }
@@ -102,10 +103,10 @@ $(function () {
 				$("#fruit1").css({"left":Math.round(Math.random()*260),"top":-60})
 				step = Math.round(Math.random()*5)+1;
 				//trails reduse by one
-				trailsleft--
+				trailsleft --;
 
 				//populate trails left box
-				addHearths ()
+				addHearths ();
 
 			}else{
 				playing== false;
