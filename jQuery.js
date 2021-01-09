@@ -65,6 +65,8 @@ $(function () {
  	score ++;
  	$("#scoreValue").html(score);
  	$('#sliseSound')[0].play();
+ 	stopAction ();
+ 	startFruit ();
  })
 
 
