@@ -87,6 +87,7 @@ $ git branch -d nameOfbranch
 <--all of branches-->
 $ git branch
 
+//you should go to master branch and then merge files
 <--merge one branch to master-->
 $ git merge nameOfbranch
 
