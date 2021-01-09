@@ -77,6 +77,7 @@ $(function () {
  //stop actions up to down fruit
  function stopAction () {
  	clearInterval(action);
+ 	$('fruit1').hide();
  }
 
  function startFruit () {
@@ -114,7 +115,8 @@ $(function () {
 				$("#Gameover").html('Game Over'+ '<br> your score is: '+score)
 				//stop sending fruit
 				stopAction ();
-				$('fruit1').hide();
+				$('#timeRemaning').hide();
+				
 			}
 		}
 	},15)
