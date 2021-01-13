@@ -145,3 +145,19 @@ $ git push origin --tags
 <--checkout tags-->
 $ git checkout v1.8
 
+//you can creat repository whit no go to github website
+//it instroction is in the github website but i cant use it
+create a new repository on the command line
+$ echo "# App-landing-page" >> README.md
+$ git init
+$ git add README.md
+$ git commit -m "first commit"
+$ git branch -M main
+$ git remote add origin https://github.com/pooya2293/App-landing-page.git
+$ git push -u origin main
+
+…or push an existing repository from the command line
+$ git remote add origin https://github.com/pooya2293/App-landing-page.git
+$ git branch -M main
+$ git push -u origin main
+                
