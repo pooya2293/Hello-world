@@ -86,6 +86,33 @@ ourArray.shift(); // ourArray now equals ["J", "cat"]
 ourArray.unshift("Happy");
 // ourArray now equals ["Happy", "J", "cat"]
 
+//---------------------------
+
+excesise:
+nextInLine([], 5) should return a number.
+
+Passed
+nextInLine([], 1) should return 1
+
+Passed
+nextInLine([2], 1) should return 2
+
+Passed
+nextInLine([5,6,7,8,9], 1) should return 5
+
+Passed
+After nextInLine(testArr, 10), testArr[4] should be 10
+
+
+function nextInLine(arr, item) {
+  // Only change code below this line
+  arr.push(item);
+  var remove = arr.shift();
+  return remove;
+  // Only change code above this line
+
+}
+
 
 
 
