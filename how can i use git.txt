@@ -122,7 +122,7 @@ $ git push -u origin main
 $ git remote add origin(remoteName) http://github.com/Hello-world(remoteAdress)
 
 <-- tag-->
-//when you use tag that the version of releasable file release
+//when you use tag that the oission of releasable file release
 $ git tag -a v2.0(nameOftag) -m 'second version tango'
 
 <--show all tags-->
@@ -160,4 +160,14 @@ $ git push -u origin main
 $ git remote add origin https://github.com/pooya2293/App-landing-page.git
 $ git branch -M main
 $ git push -u origin main
+
+<-- some cmd line offcurse its in linuxe -->
+//new foolder
+$ mkdir 
+//remove
+$ rm -r -f (-rf)
+//make file
+$ touch
+//show path 
+$ pwd
                 
