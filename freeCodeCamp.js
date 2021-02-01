@@ -130,6 +130,151 @@ test(true);  // returns "It was true"
 test(false); // returns "It was false"
 
 
+tip's:
+1   ==  1   // true
+1   ==  2   // false
+1   == '1'  // true
+"3" ==  3   // true
+
+3 ===  3   // true
+3 === '3'  // false
+
+//--------------------
+
+Note
+In JavaScript, you can determine the type of a variable or a value with the typeof operator, as follows:
+
+typeof 3   // returns 'number'
+typeof '3' // returns 'string'
+
+//----------------------
+
+tips:
+1 !=  2     // true
+1 != "1"    // false
+1 != '1'    // false
+1 != true   // false
+0 != false  // false
+
+3 !==  3   // false
+3 !== '3'  // true
+4 !==  3   // true
+
+testNotEqual(99) should return "Equal"
+
+testNotEqual("99") should return "Equal"
+
+testNotEqual(12) should return "Not Equal"
+
+testNotEqual("12") should return "Not Equal"
+
+testNotEqual("bob") should return "Not Equal"
+
+You should use the != operator
+
+// Setup
+function testNotEqual(val) {
+  if (val != 99) { // Change this line
+    return "Not Equal";
+  }
+  return "Equal";
+}
+
+testNotEqual(10);
+
+//--------------------
+
+tips:
+5   >  3   // true
+7   > '3'  // true
+2   >  3   // false
+'1' >  9   // false
+
+4   <= 5  // true
+'7' <= 7  // true
+5   <= 5  // true
+3   <= 2  // false
+'8' <= 4  // false
+
+6   >=  6   // true
+7   >= '3'  // true
+2   >=  3   // false
+'7' >=  9   // false
+
+//---------------------
+
+The same effect could be achieved by nesting an if statement inside another if:
+
+if (num > 5) {
+  if (num < 10) {
+    return "Yes";
+  }
+}
+return "No";
+will only return "Yes" if num is greater than 5 and less than 10. The same logic can be written as:
+
+if (num > 5 && num < 10) {
+  return "Yes";
+}
+return "No";
+
+//----------------------
+
+The pattern below should look familiar from prior waypoints:
+
+if (num > 10) {
+  return "No";
+}
+if (num < 5) {
+  return "No";
+}
+return "Yes";
+will return "Yes" only if num is between 5 and 10 (5 and 10 included). The same logic can be written as:
+
+if (num > 10 || num < 5) {
+  return "No";
+}
+return "Yes";
+
+//-----------------------
+
+if (num > 15) {
+  return "Bigger than 15";
+} else if (num < 5) {
+  return "Smaller than 5";
+} else {
+  return "Between 5 and 15";
+}
+
+//-----------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
