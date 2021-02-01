@@ -103,7 +103,10 @@ nextInLine([5,6,7,8,9], 1) should return 5
 Passed
 After nextInLine(testArr, 10), testArr[4] should be 10
 
+در واقع متن سوال این است نه سوالات بالا :
+Add the number to the end of the array, then remove the first element of the array.
 
+The nextInLine function should then return the element that was removed. 
 function nextInLine(arr, item) {
   // Only change code below this line
   arr.push(item);
@@ -112,6 +115,21 @@ function nextInLine(arr, item) {
   // Only change code above this line
 
 }
+
+//------------------------
+
+Example
+
+function test (myCondition) {
+  if (myCondition) {
+     return "It was true";
+  }
+  return "It was false";
+}
+test(true);  // returns "It was true"
+test(false); // returns "It was false"
+
+
 
 
 
