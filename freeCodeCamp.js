@@ -959,8 +959,130 @@ function updateRecords(object, id, prop, value) {
   return object;
 }
 
-//----------------------------------------
+//------------------------------------------
 
+You should be using a while loop for this.
+
+Passed
+myArray should equal [5,4,3,2,1,0].
+
+// Setup
+var myArray = [];
+
+// Only change code below this line
+var i = 5;
+while (i>=0){
+  myArray.push(i);
+  i--;
+}
+
+//------------------------------------------
+
+You should be using a for loop for this.
+
+Passed
+myArray should equal [1,2,3,4,5].
+
+// Setup
+var myArray = [];
+
+// Only change code below this line
+for (var i =1; i<=5 ; i++){
+  myArray.push(i);
+}
+
+//-------------------------------------------
+
+You should be using a for loop for this.
+
+Passed
+myArray should equal [1,3,5,7,9].
+
+// Setup
+var myArray = [];
+
+// Only change code below this line
+for ( var i=1; i<=9; i += 2) {
+  myArray.push(i);
+}
+
+
+//-------------------------------------------
+
+wow this almost hard example do by my self
+
+//total should be declared and initialized to 0.
+
+//total should equal 20.
+
+//You should use a for loop to iterate through myArr.
+
+//You should not attempt to directly assign the value 20 to total.
+
+
+// Setup
+var myArr = [ 2, 3, 4, 5, 6];
+
+// Only change code below this line
+var total= 0;
+var a =[];
+for (var i =0 ; i< myArr.length; i++) {
+  a.push(myArr[i]);
+  total= total + a[i];
+  
+}
+
+//Hint:
+//Solution 1:
+
+var total = 0;
+for (var i = 0; i < myArr.length; i++) {
+  total += myArr[i];
+}
+
+
+//Solution 2 :
+
+for (var y = myArr.length - 1; y >= 0; y--) {
+  total += myArr[y];
+}
+
+//---------------------------------------------
+
+var arr = [
+  [1,2], [3,4], [5,6]
+];
+for (var i=0; i < arr.length; i++) {
+  for (var j=0; j < arr[i].length; j++) {
+    console.log(arr[i][j]);
+  }
+}
+
+
+//Example:
+
+multiplyAll([[1],[2],[3]]) should return 6
+
+Passed
+multiplyAll([[1,2],[3,4],[5,6,7]]) should return 5040
+
+Passed
+multiplyAll([[5,1],[0.2, 4, 0.5],[3, 9]]) should return 54
+
+function multiplyAll(arr) {
+  var product = 1;
+  // Only change code below this line
+  for (var i=0; i<arr.length; i++){
+    for(var j=0; j<arr[i].length; j++){
+      product = product * arr[i][j];
+    }
+  }
+  // Only change code above this line
+  return product;
+}
+
+
+//----------------------------------------------
 
 
 
