@@ -1085,7 +1085,64 @@ function multiplyAll(arr) {
 //----------------------------------------------
 
 
+var ourArray = [];
+var i = 0;
+do {
+  ourArray.push(i);
+  i++;
+} while (i < 5);
 
+The example above behaves similar to other types of loops, and the resulting array will look like [0, 1, 2, 3, 4].
+
+//----------------------------------------------
+
+Hard example by doing my self
+
+ function multiply(arr, n) {
+    var product = 1;
+    for (var i = 0; i < n; i++) {
+        product *= arr[i];
+    }
+    return product;
+  }
+  
+  However, notice that multiply(arr, n) == multiply(arr, n - 1) * arr[n - 1]. That means you can rewrite multiply in terms of itself and never need to use a loop.
+
+  function multiply(arr, n) {
+    if (n <= 0) {
+      return 1;
+    } else {
+      return multiply(arr, n - 1) * arr[n - 1];
+    }
+  }
+  
+  //Example:
+  
+  sum([1], 0) should equal 0.
+
+Passed
+sum([2, 3, 4], 1) should equal 2.
+
+Passed
+sum([2, 3, 4, 5], 3) should equal 9.
+
+Passed
+Your code should not rely on any kind of loops (for or while or higher order functions such as forEach, map, filter, or reduce.).
+
+Passed
+You should use recursion to solve this problem.
+
+function sum(arr, n) {
+  // Only change code below this line
+if (n<=0){
+  return 0;
+}else {
+  return  sum(arr, n-1) + arr[n-1];
+  } 
+  // Only change code above this line
+}
+
+//--------------------------------------------------
 
 
 
