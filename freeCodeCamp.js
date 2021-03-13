@@ -1032,6 +1032,8 @@ for (var i =0 ; i< myArr.length; i++) {
   
 }
 
+I dont know whay am i use a varriable for this corse but i think i was confiuce.
+
 //Hint:
 //Solution 1:
 
@@ -1144,6 +1146,70 @@ if (n<=0){
 
 //--------------------------------------------------
 
+this challenge is so hard and im very close to finde solution but i cant for didnt use if nested ;
+
+
+lookUpProfile("Kristian", "lastName") should return the string Vos
+
+Passed
+lookUpProfile("Sherlock", "likes") should return ["Intriguing Cases", "Violin"]
+
+Passed
+lookUpProfile("Harry", "likes") should return an array
+
+Passed
+lookUpProfile("Bob", "number") should return the string No such contact
+
+Passed
+lookUpProfile("Bob", "potato") should return the string No such contact
+
+Passed
+lookUpProfile("Akira", "address") should return the string No such property
+
+// Setup
+var contacts = [
+    {
+        "firstName": "Akira",
+        "lastName": "Laine",
+        "number": "0543236543",
+        "likes": ["Pizza", "Coding", "Brownie Points"]
+    },
+    {
+        "firstName": "Harry",
+        "lastName": "Potter",
+        "number": "0994372684",
+        "likes": ["Hogwarts", "Magic", "Hagrid"]
+    },
+    {
+        "firstName": "Sherlock",
+        "lastName": "Holmes",
+        "number": "0487345643",
+        "likes": ["Intriguing Cases", "Violin"]
+    },
+    {
+        "firstName": "Kristian",
+        "lastName": "Vos",
+        "number": "unknown",
+        "likes": ["JavaScript", "Gaming", "Foxes"]
+    }
+];
+
+function lookUpProfile(name, prop){
+    
+
+// Only change code below this line
+  for (var i=0;i<contacts.length;i++){
+      if(contacts[i].firstName === name){
+          if (contacts[i].hasOwnProperty(prop)){
+          return contacts[i][prop];    
+      } else {
+          return "No such property";
+      }
+    }  
+  }
+  return "No such contact";
+// Only change code above this line
+}
 
 
 
