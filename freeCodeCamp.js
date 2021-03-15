@@ -1302,9 +1302,184 @@ function convertToInteger(str) {
 }
 
 
+//-----------------------------------------------------
+
+The following function uses an if/else statement to check a condition:
+
+function findGreater(a, b) {
+  if(a > b) {
+    return "a is greater";
+  }
+  else {
+    return "b is greater";
+  }
+}
+
+
+This can be re-written using the conditional operator:
+
+function findGreater(a, b) {
+  return a > b ? "a is greater" : "b is greater";
+}
+
+
+The syntax is a ? b : c, where a is the condition, b is the code to run when the condition returns True, and c is the code to run when the condition returns False.
+
+EX:
+
+checkEqual should use the conditional operator
+
+Passed
+checkEqual(1, 2) should return the string Not Equal
+
+Passed
+checkEqual(1, 1) should return the string Equal
+
+Passed
+checkEqual(1, -1) should return the string Not Equal
+
+function checkEqual(a, b) {
+return b == a ? "Equal":"Not Equal";
+}
+
+//-----------------------------------------------
+
+Use Multiple Conditional (Ternary) Operators
+
+Ex:
+
+checkSign should use multiple conditional operators
+
+Passed
+checkSign(10) should return the string positive. Note that capitalization matters
+
+Passed
+checkSign(-12) should return the string negative. Note that capitalization matters
+
+Passed
+checkSign(0) should return the string zero. Note that capitalization matters
+
+
+function checkSign(num) {
+ return num > 0 ? "positive"
+ : num === 0 ? "zero"
+ : "negative"; 
+}
 
 
 
+//---------------------------------------------
+
+Use Recursion to Create a Countdown
+function countup(n) {
+  if (n < 1) {
+    return [];
+  } else {
+    const countArray = countup(n - 1);
+    countArray.push(n);
+    return countArray;
+  }
+}
+console.log(countup(5)); //[1, 2, 3, 4, 5]
+
+
+Ex:
+
+countdown(-1) should return an empty array.
+
+countdown(10) should return [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+countdown(5) should return [5, 4, 3, 2, 1]
+
+Your code should not rely on any kind of loops (for, while or higher order functions such as forEach, map, filter, and reduce).
+
+You should use recursion to solve this problem.
+
+Hint 1:
+// Only change code below this line
+
+function countdown(n){
+  if (n < 1){
+  return  [];
+  }else {
+   var c = countdown(n-1) ;
+    c.unshift(n);
+    return c; 
+  }
+}
+ console.log( countdown(10)); //[ 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 ]
+ 
+// Only change code above this line
+
+Hint 2:
+
+function countdown(n) {
+  if (n < 1) {
+    return [];
+  } else {
+    const arr = countdown(n - 1);
+    arr.splice(0, 0, n);
+    return arr;
+  }
+}
+
+Hint 3:
+function countdown(n){
+   return n < 1 ? [] : [n].concat(countdown(n - 1));
+}
+
+Hint 4:
+function countdown(n){
+   return n < 1 ? [] : [n, ...countdown(n - 1)];
+}
+
+//--------------------------------------------------
+
+Ex:
+
+Your function should return an array.
+
+Your code should not use any loop syntax (for or while or higher order functions such as forEach, map, filter, or reduce).
+
+rangeOfNumbers should use recursion (call itself) to solve this challenge.
+
+rangeOfNumbers(1, 5) should return [1, 2, 3, 4, 5].
+
+rangeOfNumbers(6, 9) should return [6, 7, 8, 9].
+
+rangeOfNumbers(4, 4) should return [4].
+
+Hint 1:
+
+function rangeOfNumbers(startNum, endNum) {
+  if(endNum-startNum===0) {
+    return [startNum];
+  }else{ 
+    var Arr = rangeOfNumbers(startNum,endNum - 1);
+    Arr.push(endNum);
+    return Arr;
+  }
+};
+console.log(rangeOfNumbers(3,5)); //[ 3, 4, 5 ]
+
+
+Hint 2:
+
+function rangeOfNumbers(startNum, endNum) {
+  return startNum === endNum
+    ? [startNum]
+    : rangeOfNumbers(startNum, endNum - 1).concat(endNum);
+}
+
+Hint 3:
+
+function rangeOfNumbers(startNum, endNum) {
+  return startNum === endNum
+    ? [startNum]
+    : [...rangeOfNumbers(startNum, endNum - 1), endNum ];
+}
+
+//-------------------------------------------------
 
 
 
