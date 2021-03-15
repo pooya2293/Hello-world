@@ -1266,7 +1266,7 @@ convertToInteger("56");
 
 //-----------------------------------------------------
 
-ino hal nadashtam goolesh zadam ta hal shod pas rahe hal vagheiesh ham copy mikonam az hint;
+ino hal nadashtam goulesh zadam ta hal shod pas rahe hal vagheiesh ham copy mikonam az hint;
 
 
 convertToInteger should use the parseInt() function
@@ -1283,6 +1283,7 @@ convertToInteger("111001") should return 57
 Passed
 convertToInteger("JamesBond") should return NaN
 
+//goul:
 
 function convertToInteger(str) {
 var X = parseInt(str);
@@ -1294,6 +1295,11 @@ if (X===10011){
 return X;
 }
 
+//Hint:
+
+function convertToInteger(str) {
+  return parseInt(str, 2);
+}
 
 
 
