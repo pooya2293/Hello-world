@@ -1,0 +1,73 @@
+whoami --> user name 
+
+sudo -I --> root mood (But in my cumputer cant work)
+
+su userName --> Back to the safe user
+
+pwd --> where am i 
+
+cd / --> move to root directory 
+
+mkdir --> make newfoolder 
+
+rmdir newfoolderName --> delete Foolder
+
+touch fileName.type --> new File
+
+ls -l FileName.type --> check permissions 
+
+chmod ### FileName.type --> change mod
+
+cp FileName.type FileName2.type --> copy from to 
+
+mv FileName.type foolderName/ --> Move File
+
+mv FileName.type FileName2.type --> Rename
+
+cp -a foolderName/. foolderName2 --> copy with hidden File
+
+echo "console.log('hi');"> FileName.type --> overWrite 
+
+echo "console.log('hi');">> FileName.type --> Append to 
+
+cat File.type (add -n to number of read lines )--> read File
+or
+vim File.type
+
+uniq File.type --> read unique lines (no duplicate)
+
+head -3 File.type --> Print first 3 lines
+
+tail -3 File.type --> Print last 3 lines
+
+head -3 File.type | tail -1 --> print row 3 of File.type
+
+history | tail -20 --> print last 20 lines of bash history
+
+grep "hello" File.type --> search --> Add :
+-i case insensitive
+-n display line number
+--color highlight
+-v line excluding the word
+
+grep -m 2 "hello" File.type --> search two lines for hello
+
+grep "hello" *.type --> search for any File have .type
+
+grep "h*o" File.type 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
