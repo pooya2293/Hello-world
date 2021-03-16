@@ -56,6 +56,56 @@ grep "hello" *.type --> search for any File have .type
 
 grep "h*o" File.type 
 
+grep -r "hello" "." --> whole of where you are search hello
+
+grep -rl "hello" "." --> search hello whole but return fileNames insted of lines number
+
+grep "hello" File.type | grep "console" --> look for lines containing both ”hello” and “console” inside app.js
+
+egrep "hello|hi" File.type --> look for lines containing ”hello” or “hi” inside File.type
+
+grep "hello" File.type | grep -v "console" --> look for lines containing ”hello” but not containing “console” inside app.js
+
+
+find .-name "app*" -type f --> Look recursively for files (exclude folders)
+named app* inside the folder where you are .
+
+find .-name "app*" -type d --> Look recursively for folders named app* inside the folder where you are .
+
+find .-name "app*" -type d -exec rm -rf --> Look recursively for folders named app* inside the folder where you are and remove them .
+
+du -ch . | grep total --> Get the size of the folder where you are.
+
+which NewFoolder --> Find in which location an executable file is located:
+
+sed -i.backup 's/hi/hi there/g' File.type --> Replace all occurrences of “hi” in File.type with “hi there”
+
+
+//Download a file from the internet
+
+First Install wget using Homebrew: --> 
+
+1) ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" </dev/null 2> /dev/null
+
+2) brew install wget
+
+then
+
+wget https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823_1280.jpg
+
+
+//Create a bash script and run it:
+
+Create a file run, make it executable, write
+bash code and execute:
+
+1) touch run
+
+2) chmod +x run
+
+3) ./run
+
+
 
 
 
