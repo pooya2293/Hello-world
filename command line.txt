@@ -66,7 +66,6 @@ egrep "hello|hi" File.type --> look for lines containing ”hello” or “hi”
 
 grep "hello" File.type | grep -v "console" --> look for lines containing ”hello” but not containing “console” inside app.js
 
-
 find .-name "app*" -type f --> Look recursively for files (exclude folders)
 named app* inside the folder where you are .
 
@@ -81,6 +80,8 @@ which NewFoolder --> Find in which location an executable file is located:
 sed -i.backup 's/hi/hi there/g' File.type --> Replace all occurrences of “hi” in File.type with “hi there”
 
 
+//----------------------------------------
+
 //Download a file from the internet
 
 First Install wget using Homebrew: --> 
@@ -92,6 +93,8 @@ First Install wget using Homebrew: -->
 then
 
 wget https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823_1280.jpg
+
+//------------------------------------------
 
 
 //Create a bash script and run it:
@@ -106,6 +109,7 @@ bash code and execute:
 3) ./run
 
 
+//-------------------------------------------
 
 
 
