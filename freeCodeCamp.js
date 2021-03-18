@@ -1423,6 +1423,8 @@ function countdown(n) {
   }
 }
 
+console.log(countdown(10))//[ 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 ]
+
 Hint 3:
 function countdown(n){
    return n < 1 ? [] : [n].concat(countdown(n - 1));
@@ -1431,7 +1433,29 @@ function countdown(n){
 Hint 4:
 function countdown(n){
    return n < 1 ? [] : [n, ...countdown(n - 1)];
-}
+}  
+
+splice ( #1 , #2 , x ) -->  #1:add wich place of arr - #2: در دفعه ی دوم به بعد اگر ایکس آرایه بود از کدام بخشش اضافه کند به آرر - x:آرایه ای که .باید اضافه شود 
+
+EX:
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+function myFunction() {
+  fruits.splice(4,0, "Lemon", "Kiwi");
+	return fruits;
+}//[Banana,Orange,Apple,Mango,Lemon,Kiwi]
+
+
+unshift (x) --> x: Arr that you whant add to old Arr
+
+EX:
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+function myFunction() {
+  fruits.unshift("Lemon", "Pineapple");
+  return fruits;
+}; // [Lemon,Pineapple,Banana,Orange,Apple,Mango]
+
 
 //--------------------------------------------------
 
@@ -1481,7 +1505,191 @@ function rangeOfNumbers(startNum, endNum) {
 
 //-------------------------------------------------
 
-I AM IN YOUR COMPUTER :):):):):):):):);)
+
+		ECMA SCRIPT 6 (ES6):
+
+var --> Globaly
+
+let --> just in {} worck. Use let when you want the variable to change
+
+const --> and use const when you want the variable to remain constant. Also, rename variables declared constants should be in all caps.	
+
+const --> However, it is important to understand that objects (including arrays and functions) assigned to a variable using const are still mutable. Using the const declaration only prevents reassignment of the variable identifier.
+
+EX: 
+const s = [5, 6, 7];
+s = [1, 2, 3]; //error : TypeError: "s" is read-only 
+s[2] = 45; //if you delete above line --> [ 5, 6, 45 ]
+console.log(s);	
+
+ 
+//----------------------------
+
+	<<FREEZE OBJECT>>
+
+let obj = {
+  name:"FreeCodeCamp",
+  review:"Awesome"
+};
+Object.freeze(obj);
+obj.review = "bad";
+obj.newProp = "Test";
+console.log(obj); 
+
+
+The obj.review and obj.newProp assignments will result in errors, and the console will display the value { name: "FreeCodeCamp", review: "Awesome" }.
+
+
+EX:
+
+In this challenge you are going to use Object.freeze to prevent mathematical constants from changing. You need to freeze the MATH_CONSTANTS object so that no one is able to alter the value of PI, add, or delete properties.
+
+You should not replace the const keyword.
+
+
+MATH_CONSTANTS should be a constant variable (by using const).
+
+
+You should not change the original declaration of MATH_CONSTANTS.
+
+
+PI should equal 3.14.
+
+function freezeObj() {
+  const MATH_CONSTANTS = {
+    PI: 3.14
+  };
+  // Only change code below this line
+  
+  Object.freeze(MATH_CONSTANTS);
+
+  // Only change code above this line
+  try {
+    MATH_CONSTANTS.PI = 99;
+  } catch(ex) {
+    console.log(ex);
+  }
+  return MATH_CONSTANTS.PI;
+
+
+}
+const PI = freezeObj();
+
+
+//-------------------------------------------------
+
+	<<arrow function syntax>>
+
+const myFunc = function() {
+  const myVar = "value";
+  return myVar;
+} --> Like:
+
+const myFunc = () => {
+  const myVar = "value";
+  return myVar;
+} --> Like:
+
+const myFunc = () => "value";
+
+
+//-----------------------------------------------
+
+const multiplier = (item, multi) => item * multi;
+
+multiplier(4, 2) would return the value 8.
+
+EX:
+
+Rewrite the myConcat function which appends contents of arr2 to arr1 so that the function uses arrow function syntax:
+
+//var myConcat = function(arr1, arr2) {
+//  return arr1.concat(arr2);
+//}; --> 
+
+const myConcat = (arr1, arr2) =>  arr1.concat(arr2);
+
+concat --> function myFunction() {
+  var str1 = "Hello ";
+  var str2 = "world!";
+  var res = str1.concat(str2);
+  }; // --> Hello world!
+
+//-----------------------------------------------
+
+The result of increment(5, 2) should be 7.
+
+The result of increment(5) should be 6.
+
+A default parameter value of 1 should be used for value.
+
+// Only change code below this line
+const increment = (number, value = 1) => number + value;
+// Only change code above this line
+
+//-----------------------------------------------
+
+reduce () --> 
+
+array.reduce(function(total, currentValue, currentIndex, arr), initialValue)
+
+total =	Required   -    currentValue = Required
+
+EX: 
+
+var numbers = [10, 2, 3];
+
+function myFunc(total, num) {
+  return total - num;
+}
+
+numbers.reduce(myFunc); //--> 10-(2+3) = 5
+
+if --> numbers.reduce(myFunc,0) // --> 0-(10+2+3)= -15
+
+if --> numbers.reduce(myFunc,20) // --> 20-(10+2+3)= 5
+
+//-------------------------------------------------
+
+...args -->
+
+EX 1: 
+
+function howMany(...args) {
+  return "You have passed " + args.length + " arguments.";
+}
+console.log(howMany(0, 1, 2));// You have passed 3 arguments.
+console.log(howMany("string", null, [1, 2, 3], { }));// You have passed 4 arguments.
+
+
+EX 2:
+
+const sum = (x, y, z) => {
+  const args = [x, y, z];
+  return args.reduce((a, b) => a + b, 0);
+}
+console.log(sum(1,2,3,4)); // 0 + (1+2+3) = 6;
+
+
+
+const sum = (...args) => {
+
+  return args.reduce((a, b) => a + b, 0);
+}
+console.log(sum(1,2,3,4)); // 0 + (1+2+3+4) = 10
+
+
+//----------------------------------------
+	
+	
+	
+	
+	
+	
+		
+	
+	
+	
 
 
 
