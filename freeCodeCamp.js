@@ -1680,6 +1680,68 @@ console.log(sum(1,2,3,4)); // 0 + (1+2+3+4) = 10
 
 
 //----------------------------------------
+
+Math.max --> ES 5 code:
+
+var arr = [6, 89, 3, 45];
+var maximus = Math.max.apply(null, arr); //89
+
+Math.max با ...arr --> ES 6 code:
+
+const arr = [6, 89, 3, 45];
+const maximus = Math.max(...arr); //89
+
+EX 1:
+Copy all contents of arr1 into another array arr2 using the spread operator.
+	
+const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
+let arr2;
+
+arr2 = [...arr1];  
+
+console.log(arr2);// [ 'JAN', 'FEB', 'MAR', 'APR', 'MAY' ]
+
+//----------------------------------------
+
+ES5 code:
+
+const user = { name: 'John Doe', age: 34 };
+
+const name = user.name;//John Doe 
+const age = user.age;//34	
+
+	
+ES6 code:	
+const user = { name: 'John Doe', age: 34 };
+
+const { name, age } = user;
+console.log(name);//John Doe
+console.log(age);//34
+
+//-----------------------------------------
+
+ES5 : 
+
+const user = { name: 'John Doe', age: 34 };
+
+const username = user.name;//John Doe 
+const userage = user.age;//34	
+
+ES6 : 
+
+const user = { name: 'John Doe', age: 34 };
+
+const { name: userName, age: userAge } = user;
+
+console.log(userName);//John Doe
+console.log(userAge);//34
+
+
+//------------------------------------------
+
+	
+	
+	
 	
 	
 	
