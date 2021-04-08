@@ -1739,19 +1739,1061 @@ console.log(userAge);//34
 
 //------------------------------------------
 
+const user = {
+  johnDoe: { 
+    age: 34,
+    email: 'johnDoe@freeCodeCamp.com'
+  }
+};
+
+const { johnDoe: { age, email }} = user;
+
+const { johnDoe: { age: userAge, email: userEmail }} = user;	
+
+use userAge //34 instead of const.johnDoe.age //34
+
+//--------------------------------------------
+
+ES 6:
+
+<<Use Destructuring Assignment to Assign Variables from Arrays>>
+
+const [a, b] = [1, 2, 3, 4, 5, 6];
+console.log(a, b);//1, 2
+
+const [a, b,,, c] = [1, 2, 3, 4, 5, 6];
+console.log(a, b, c);//1 , 2 , 5
+
+EX 1:
+
+The value of a should be 6, after swapping.
+
+The value of b should be 8, after swapping.
+
+You should use array destructuring to swap a and b.
+
+let a = 8, b = 6 ;
+
+// Only change code below this line
+ [b ,a ] = [a , b ]
+ 
+ 
+ //------------------------------------------------
+
+ 
+arr should be [3,4,5,6,7,8,9,10]
+
+
+source should be [1,2,3,4,5,6,7,8,9,10]
+
+
+Array.slice() should not be used.
+
+
+Destructuring on list should be used.
 	
 	
 	
+const source = [1,2,3,4,5,6,7,8,9,10];
+function removeFirstTwo(list) {
+  // Only change code below this line
+   
+  let [a , b ,...arr] = list;
+  // Only change code above this line
+  return arr;
+}
+const arr = removeFirstTwo(source);	
+
+
+
+
+array.slice(start, end) --> 	
+	
+EX : 
+
+var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+var citrus = fruits.slice(1, 4);
+
+console.log (citrus);//Orange,Lemon,Apple
+
+
+//---------------------------------------------
+
+  <<Use Destructuring Assignment to Pass an Object as a Function's Parameters>>
+
+	i cant understand
+	
+const profileUpdate = (profileData) => {
+  const { name, age, nationality, location } = profileData;
+
+} -->
+
+const profileUpdate = ({ name, age, nationality, location }) => {
+
+}
+
+
+EX 1:
+
+stats should be an object.
+
+
+half(stats) should be 28.015
+
+
+Destructuring should be used.
+
+
+Destructured parameter should be used.
+
+const stats = {
+  max: 56.78,
+  standard_deviation: 4.34,
+  median: 34.54,
+  mode: 23.87,
+  min: -0.75,
+  average: 35.85
+};
+
+// Only change code below this line
+ const half = (stats) => (stats.max + stats.min) / 2.0  -->
+ 
+ const half = ({max , min}) => (max + min )/2.0;
+// Only change code above this line
+	
+	
+//-------------------------------------------
+
+
+	<<   Create Strings using Template Literals   >>
+	
+const person = {
+  name: "Zodiac Hasbro",
+  age: 56
+};
+
+
+const greeting = `Hello, my name is ${person.name}!
+I am ${person.age} years old.`;
+
+console.log(greeting);// Hello, my name is Zodiac Hasbro! and I am 56 years old.
+
+
+A lot of things happened there. Firstly, the example uses backticks (`), not quotes (' or "), to wrap the string. Secondly, notice that the string is multi-line, both in the code and the output. This saves inserting \n within strings. The ${variable} syntax used above is a placeholder. Basically, you won't have to use concatenation with the + operator anymore. To add variables to strings, you just drop the variable in a template string and wrap it with ${ and }. Similarly, you can include other expressions in your string literal, for example ${a + b}. This new way of creating strings gives you more flexibility to create robust strings.
+
+const result = {
+  success: ["max-length", "no-amd", "prefer-arrow-functions"],
+  failure: ["no-var", "var-on-top", "linebreak"],
+  skipped: ["no-extra-semi", "no-dup-keys"]
+};
+
+
+function makeList(arr) {
+  // change code below this line
+  const failureItems = [];
+  for (let i = 0; i < arr.length; i++) {
+    failureItems.push(`<li class="text-warning">${arr[i]}</li>`);
+  }
+  // change code above this line
+  return failureItems;
+}
+
+
+const failuresList = makeList(result.failure); --> 
+//[
+  '<li class="text-warning">no-var</li>',
+  '<li class="text-warning">var-on-top</li>',
+  '<li class="text-warning">linebreak</li>'
+]
+
+//-----------------------------------------
+
+   <<  Write Concise Object Literal Declarations Using Object Property Shorthand  >>
+
+const getMousePosition = (x, y) => ({ x: x, y: y }); -->
+
+const getMousePosition = (x, y) => ({ x, y });
+
+
+EX 1 : 
+const createPerson = (name, age, gender) => {
+  // Only change code below this line
+  return {
+    name: name,
+    age: age,
+    gender: gender
+  };
+  // Only change code above this line
+}; 
+
+Solution: -->
+
+const createPerson = (name, age, gender) => {
+  // Only change code below this line
+  return {
+    name,
+    age,
+    gender
+  };
+  // Only change code above this line
+};
+console.log(createPerson("poori",12,"male")) // { name: 'poori', age: 12, gender: 'male' }
+
+//-------------------------------------------
+
+When defining functions within objects in ES5, we have to use the keyword function as follows:
+
+const person = { name: "Taylor", sayHello: function() { return `Hello! My name is ${this.name}.`; } };
+
+-->
+
+const person = { name: "Taylor", sayHello() { return `Hello! My name is ${this.name}.`; } };
+
+EX 1 : 
+
+// Only change code below this line
+const bicycle = {
+  gear: 2,
+  setGear: function(newGear) {
+    this.gear = newGear;
+  }
+};
+// Only change code above this line
+bicycle.setGear(3);
+console.log(bicycle.gear);//3
+
+Solution : -->
+
+// Only change code below this line
+const bicycle = {
+  gear: 2,
+  setGear(newGear) {
+    this.gear = newGear;
+  }
+};
+// Only change code above this line
+bicycle.setGear(3);
+console.log(bicycle.gear); // 3
+
+//-------------------------------------
+
+    <<Use class Syntax to Define a Constructor Function>>
+	
+var SpaceShuttle = function(targetPlanet){ this.targetPlanet = targetPlanet; } var zeus = new SpaceShuttle('Jupiter');
+
+-->
+
+class SpaceShuttle { constructor(targetPlanet) { this.targetPlanet = targetPlanet; } } const zeus = new SpaceShuttle('Jupiter');
+
+Note: UpperCamelCase should be used by convention for ES6 class names, as in SpaceShuttle used above.
+
+EX 1:
+
+// Only change code below this line
+var Vegetable = function(name) { this.name = name; } 
+// Only change code above this line
+
+const carrot = new Vegetable('carrot');
+console.log(carrot.name); // 'carrot'
+
+
+-->
+
+
+// Only change code below this line
+class Vegetable { constructor (name) { this.name = name; } }
+// Only change code above this line
+
+const carrot = new Vegetable('carrot');
+console.log(carrot.name); // carrot
+
+const moos = new Vegetable('soosan');
+console.log(moos.name);// soosan
+
+
+//----------------------------------------------	
+	
+function Car(make, model, year) {
+  this.make = make;
+  this.model = model;
+  this.year = year;
+}
+
+const car1 = new Car('Eagle', 'Talon TSi', 1993);
+
+console.log(car1.make);
+// expected output: "Eagle"
+
+//-----------------------------------------------
+i cant understand this curse:
+<<Use getters and setters to Control Access to an Object>>
+
+class Book {
+  constructor(author) {
+    this._author = author;
+  }
+  // getter
+  get writer() {
+    return this._author;
+  }
+  // setter
+  set writer(updatedAuthor) {
+    this._author = updatedAuthor;
+  }
+}
+const novel = new Book('sooori');
+console.log(novel.writer);//sooori
+novel.writer = 'Pooori';
+console.log(novel.writer);//Pooori
+
+
+Use the class keyword to create a Thermostat class. The constructor accepts a Fahrenheit temperature.
+
+In the class, create a getter to obtain the temperature in Celsius and a setter to set the temperature in Celsius.
+
+Remember that C = 5/9 * (F - 32) and F = C * 9.0 / 5 + 32, where F is the value of temperature in Fahrenheit, and C is the value of the same temperature in Celsius.
+
+Note: When you implement this, you will track the temperature inside the class in one scale, either Fahrenheit or Celsius.
+
+
+
+// Only change code below this line
+class Thermostat {
+  constructor(fahrenheit ){
+    this.fahrenheit   = fahrenheit;
+  }
+  get temperature() {
+    return 5/9 * (this.fahrenheit - 32);
+  }
+  set temperature(Celsius) {
+   this.fahrenheit = (Celsius * 9.0) / 5 + 32;
+  }   
+}
+// Only change code above this line
+
+const thermos = new Thermostat(76); // Setting in Fahrenheit scale
+let temp = thermos.temperature; // 24.44 in Celsius
+console.log(temp);
+thermos.temperature = 26;
+temp = thermos.temperature; // 26 in Celsius
+console.log(temp)
+
+ساده کردن فهم این :
+
+// Only change code below this line
+class Thermostat {
+  constructor(fahrenheit ){
+    this.fahrenheit   = fahrenheit;
+  }
+  get temperature() {
+    return 10 * this.fahrenheit ;
+  }
+  set temperature(Celsius) {
+   this.fahrenheit = (Celsius * 2) ;
+  }   
+}
+// Only change code above this line
+
+const thermos = new Thermostat(76); // Setting in Fahrenheit scale
+let temp = thermos.temperature; // 760 
+console.log(temp);
+thermos.temperature = 12;
+temp = thermos.temperature; // 240 
+console.log(temp)
+
+//-------------------------------------------
+ES 5:
+
+const config = {
+    _port: 4001,
+    setPort: function(port) {
+        // Port must be a number
+        if (typeof port !== 'number') return;
+        // Port must be within the accepted range
+        if (port < 1024 || port > 65535) return;
+
+        this._port = port;
+    },
+    getPort: function() {
+        return this._port;
+    },
+};
+
+config.setPort(1023);
+console.log(config.getPort()); //=> 4001
+
+config.setPort(1024);
+console.log(config.getPort()); //=> 1024
+
+ES 6:
+const config = {
+    _port: 4001,
+    set port(port) {
+        // Port must be a number
+        if (typeof port !== 'number') return;
+        // Port must be within the accepted range
+        if (port < 1024 || port > 65535) return;
+ 
+        this._port = port;
+    },
+    get port() {
+        return this._port;
+    },
+};
+
+config.port=1023;
+console.log(config.port); //=> 4001
+
+
+config.port=1024;
+console.log(config.port); //=> 1024
+
+//------------------------------------------
+
+   <<Use export to Share a Code Block>>
+
+export const add = (x, y) => {
+  return x + y;
+}
+
+The above is a common way to export a single function, but you can achieve the same thing like this:
+
+const add = (x, y) => {
+  return x + y;
+}
+
+export { add };
+
+EX 1:
+
+const uppercaseString = (string) => {
+  return string.toUpperCase();
+}
+
+const lowercaseString = (string) => {
+  return string.toLowerCase()
+}
+
+export {uppercaseString,lowercaseString};
+
+//---------------------------------------------------
+
+   <<Reuse JavaScript Code Using import>>
+   
+import { add } from './math_functions.js';
+
+Here, import will find add in math_functions.js, import just that function for you to use, and ignore the rest. The ./ tells the import to look for the math_functions.js file in the same folder as the current file. The relative file path (./) and file extension (.js) are required when using import in this way.
+
+import { add, subtract } from './math_functions.js';
+
+//--------------------------------------------------
+
+	<<Use * to Import Everything from a File>>
+
+
+Suppose you have a file and you wish to import all of its contents into the current file. This can be done with the import * as syntax.
+
+import * as myMathModule from "./math_functions.js";
+
+myMathModule.add(2,3);
+myMathModule.subtract(5,3);
+
+EX 1:
+
+import * as stringFunctions from "./string_functions.js";
+
+// Only change code above this line
+
+stringFunctions.uppercaseString("hello");
+stringFunctions.lowercaseString("WORLD!");
+
+
+//--------------------------------------------
+
+
+	<< Create an Export Fallback with export default>>
+	
+
+
+There is another export syntax you need to know, known as export default. Usually you will use this syntax if only one value is being exported from a file. It is also used to create a fallback value for a file or module.
+
+Below are examples using export default:
+
+export default function add(x, y) {
+  return x + y;
+}
+
+export default function(x, y) {
+  return x + y;
+}
+
+The first is a named function, and the second is an anonymous function.
+
+Since export default is used to declare a fallback value for a module or file, you can only have one value be a default export in each module or file. Additionally, you cannot use export default with var, let, or const
+
+EX 1:
+
+The following function should be the fallback value for the module. Please add the necessary code to do so: 
+
+Your code should use an export fallback.
+
+
+
+function subtract(x, y) {
+  return x - y;
+}
+
+export default function (x,y) {
+  return x - y;
+}
+
+ 
+//------------------------------------------------
+
+	<< Import a Default Export >>
+
+Ex 1:
+
+import subtract from "./math_functions.js";
+// Only change code above this line
+
+subtract(7,4);
+
+//----------------------------------------------
+
+	<< Create a JavaScript Promise >>
+	
+const myPromise = new Promise((resolve, reject) => {
+
+});
+
+
+Ex 1 :
+
+const makeServerRequest = new Promise((resolve ,reject ) => {
+
+});
+
+//----------------------------------------------
+
+	<< Complete a Promise with resolve and reject>>
+	
+
+const myPromise = new Promise((resolve, reject) => {
+  if(condition here) {
+    resolve("Promise was fulfilled");
+  } else {
+    reject("Promise was rejected");
+  }
+});
+
+
+EX 1:
+
+Make the promise handle success and failure. If responseFromServer is true, call the resolve method to successfully complete the promise. Pass resolve a string with the value 'We got the data'. If responseFromServer is false, use the reject method instead and pass it the string: 'Data not received'.
+
+
+
+const makeServerRequest = new Promise((resolve, reject) => {
+
+    
+  if(responseFromServer) {
+    resolve ('We got the data');// Change this line
+  } else {  
+    reject ('Data not received');// Change this line
+  }
+});
+
+
+//-----------------------------------------
+
+	<< Handle a Fulfilled Promise with then >>
+	
+	myPromise.then(result => {
+  
+});
+	
+	
+Ex 1: 
+
+const makeServerRequest = new Promise((resolve, reject) => {
+ 
+  let responseFromServer = true;
+    
+  if(responseFromServer) {
+    resolve("We got the data");
+  } else {  
+    reject("Data not received");
+  }
+});
+
+makeServerRequest.then(result =>{
+
+console.log(result);
+
+});
+
+
+//--------------------------------------
+
+	<< Handle a Rejected Promise with catch >>
+	
+	
+myPromise.catch(error => {
+  
+});
+
+Ex 1: 
+
+
+const makeServerRequest = new Promise((resolve, reject) => {
+ 
+  let responseFromServer = false;
+    
+  if(responseFromServer) {
+    resolve("We got the data");
+  } else {  
+    reject("Data not received");
+  }
+});
+
+makeServerRequest.then(result => {
+  console.log(result);
+});
+
+
+makeServerRequest.catch(error => {
+  console.log(error);
+});
+
+
+//------------------------------------
+
+	<< Using the Test Method >>
+
+let myString = "Hello, World!";
+let myRegex = /Hello/;
+let result = myRegex.test(myString); // Change this line
+console.log(result); // true
+
+//------------------------------------
+
+for pets like 'dog', 'cat', 'bird', or 'fish' true and any thing else show false :-->
+
+let petString = "James has a pet cat.";
+let petRegex = /dog|cat|bird|fish/; // Change this line
+let result = petRegex.test(petString);//--> True
+
+//------------------------------------
+
+for doesnt matter of FREEcodeCAMP with freeCODEcamp : -->
+
+let myString = "freeCodeCamp";
+let fccRegex = /FReeCodeCamp/i; // Change this line
+let result = fccRegex.test(myString);//--> True
+
+
+//-------------------------------------
+
+	<< Extract Matches >>
+
+"Hello, World!".match(/Hello/);
+let ourStr = "Regular expressions";
+let ourRegex = /expressions/;
+ourStr.match(ourRegex);
+
+'string'.match(/regex/);
+VS
+/regex/.test('string');
+
+
+EX 1:
+
+let extractStr = "Extract the word 'coding' from this string.";
+let codingRegex = /coding/; // Change this line
+let result = extractStr.match(codingRegex); // Change this line
+console.log(result);//--> [ 'coding',
+  index: 18,
+  input: 'Extract the word \'coding\' from this string.',
+  groups: undefined ]
+
+
+
+Ex 2 : 
+
+let extractStr = "The rain in SPAIN stays mainly in the plain";
+let codingRegex = /ain/; // Change this line
+let result = extractStr.match(codingRegex); // Change this line
+console.log(result); //--> [ 'ain',
+  index: 5,
+  input: 'The rain in SPAIN stays mainly in the plain',
+  groups: undefined ]
+  
+  
+EX 3 :
+
+
+
+let extractStr = "The rain in SPAIN stays mainly in the plain";
+let codingRegex = /ain/g; // Change this line
+let result = extractStr.match(codingRegex); // Change this line
+console.log(result);//--> [ 'ain', 'ain', 'ain' ]
+
+
+
+EX 4 : 
+
+let extractStr = "The rain in SPAIN stays mainly in the plain";
+let codingRegex = /ain/gi; // Change this line
+let result = extractStr.match(codingRegex); // Change this line
+console.log(result);//--> [ 'ain', 'AIN', 'ain', 'ain' ]
+
+//---------------------------------------
+
+	<< Match Anything with Wildcard Period >>
+
+let humStr = "I'll hum a song";
+let hugStr = "Bear hug";
+let huRegex = /hu./;
+huRegex.test(humStr);//--> True
+huRegex.test(hugStr);//--> True
+
+
+Ex 1: 
+
+Complete the regex unRegex so that it matches the strings run, sun, fun, pun, nun, and bun. Your regex should use the wildcard character: 
+
+let exampleStr = "Let's have fun with regular expressions!";
+let unRegex = /.un/; // Change this line
+let result = unRegex.test(exampleStr);//--> True
+
+
+//---------------------------------
+
+	<< Match Single Character with Multiple Possibilities >>
 	
 	
 	
+let bigStr = "big";
+let bagStr = "bag";
+let bugStr = "bug";
+let bogStr = "bog";
+let bgRegex = /b[aiu]g/;
+, , , and 
+bigStr.match(bgRegex);//-->["big"]
+bagStr.match(bgRegex);//-->["bag"]
+bugStr.match(bgRegex);//-->["bug"]
+bogStr.match(bgRegex);//--> null
+
+EX 1:
+
+Use a character class with vowels (a, e, i, o, u) in your regex vowelRegex to find all the vowels in the string quoteSample:
+
+Note: Be sure to match both upper- and lowercase vowels.
+
+let quoteSample = "Beware of bugs in the above code; I have only proved it correct, not tried it.";
+
+let vowelRegex = /[aeiou]/gi; 
+let result = quoteSample.match(vowelRegex) ; 
+console.log(result);
+
+//-------------------------------------
+
+let catStr = "cat bat mat sat zat" ;
+
+let bgRegex = /[a-p]at/gi;
+let result = catStr.match(bgRegex);
+
+console.log(result);//--> [ 'cat', 'bat', 'mat' ]
+
+EX 1:
+
+Match all the letters in the string quoteSample:
+
+Note: Be sure to match both uppercase and lowercase letters.
+
+let quoteSample = "The quick brown fox jumps over the lazy dog.";
+let alphabetRegex = /[a-z]/gi; // Change this line
+let result = quoteSample.match(alphabetRegex); // Change this line
+
+console.log(result);
+
+//-------------------------------------
+
+let jennyStr = "Jenny8675309";
+let myRegex = /[a-z0-9]/ig;
+jennyStr.match(myRegex);
+
+EX 1:
+
+Create a single regex that matches a range of letters between 'h' and 's', and a range of numbers between '2' and '6'.
+
+let quoteSample = "Blueberry 3.141592653s are delicious.";
+let myRegex = /[h-s2-6]/gi; // Change this line
+let result = quoteSample.match(myRegex); // Change this line
+console.log(result);
+
+//--------------------------------------
+
+	<< Match Single Characters Not Specified >>
+
+matches all characters that are not a vowel --> /[^aeiou]/gi
+
+EX 1 :
+	
+Create a single regex that matches all characters that are not a number or a vowel. Remember to include the appropriate flags in the regex.
+
+let quoteSample = "3 blind mice.";
+let myRegex = /[^aeiou0-9]/gi; // Change this line
+let result =quoteSample.match(myRegex); // Change this line
+console.log(result);//--> [ ' ', 'b', 'l', 'n', 'd', ' ', 'm', 'c', '.' ]
+
+//---------------------------------------
+
+	<< Match Characters that Occur One or More Times >>
+	
+EX 1:  
+
+let difficultSpelling = "MississippiS";
+let myRegex = /s+/gi; // Change this line
+let result = difficultSpelling.match(myRegex);
+
+console.log(result)//--> [ 'ss', 'ss', 'S' ]
+
+//----------------------------------------
+
+	<< Match Characters that Occur Zero or More Times >>
+
+let soccerWord = "gooooooooal!";
+let gPhrase = "gut feeling";
+let oPhrase = "over the moon";
+let goRegex = /go*/g;
+soccerWord.match(goRegex);//--> [ 'goooooooo' ]
+gPhrase.match(goRegex);//--> [ 'g', 'g' ]
+oPhrase.match(goRegex);//--> null
+
+
+
+for EX 1 :
+
+let phrase = "ba humbug";
+
+let regexPlus = /bah+/;
+let regexStar = /bah*/;
+
+regexPlus.test(phrase); //  False
+regexStar.test(phrase); //  True
+
+for EX 2 :
+
+let phrase = "wooooow look at that!";
+
+let regexPlus = /wo+w/;
+let regexStar = /wo*w/;
+
+regexPlus.test(phrase); // returns true
+regexStar.test(phrase); // returns true
+
+//------------------------------------
+
+	<< Find Characters with Lazy Matching >>
+
+
+var t = "titanic";
+var g1 = /t[a-z]*i/g;
+var g2 = /t[a-z]*?i/g;
+var result = t.match(g1);//[ 'titani' ]
+var result = t.match(g2);//[ 'ti', 'tani' ]
+
+
+EX 1:
+
+let text = "<h1>Winter is coming</h1>";
+let myRegex1 = /<.*>/g; 
+let myRegex2 = /<.*?>/g; 
+let result = text.match(myRegex1);//--> [ '<h1>Winter is coming</h1>' ]
+let result = text.match(myRegex2);//--> [ '<h1>', '</h1>' ]
+
+
+//-------------------------------------
+
+Find criminals :
+A criminal is represented by the capital letter C.
+
+
+let crowd = "P1P5P4CCCcP2P6CCP3";
+let reCriminals = /C+/g; // Change this line
+
+let result = crowd.match(reCriminals); //--> [ 'CCC', 'CC' ]
+
+
+//010101010101010101010101010101010101001
+
+    << only find in first of string >>
+
+let firstString = "Ricky is first and can be found.";
+let firstRegex = /^Ricky/;
+firstRegex.test(firstString);//True
+let notFirst = "You can't find Ricky now.";
+firstRegex.test(notFirst);//False
+
+
+
+
+	<< Match Ending String Patterns >>
+
+
+let theEnding = "This is a never ending story";
+let storyRegex = /story$/;
+storyRegex.test(theEnding);//True
+let noEnding = "Sometimes a story will have to end";
+storyRegex.test(noEnding);//False
+
+
+
+
+//010101010101010101010101010101010101001
+
+	<< Match All Letters and Numbers >>
+	
+
+let longHand = /[A-Za-z0-9_]+/;
+let shortHand = /\w+/;
+let numbers = "42";
+let varNames = "important_var";
+longHand.test(numbers);//True
+shortHand.test(numbers);//True
+longHand.test(varNames);//True
+shortHand.test(varNames);//True
+
+
+EX 1:
+
+let quoteSample = "The five boxing wizards jump quickly.";
+let alphabetRegexV1 = /\w/g;//right 
+let alphabetRegexV2 = /\w+/g; 
+let result = quoteSample.match(alphabetRegexV1).length;//--> 31
+let result = quoteSample.match(alphabetRegexV2).length;// --> 6
+
+
+//010101010101010101010101010101010101001
+
+	<< Match Everything But Letters and Numbers >>
+	
+let shortHand1 = /\w/;	
+let shortHand2 = /\W/;
+let numbers = "42%";
+let sentence = "Coding!";
+numbers.match(shortHand1);//[ '4', '2' ]
+numbers.match(shortHand2);//[ '%' ]
+sentence.match(shortHand1);//[ 'C', 'o', 'd', 'i', 'n', 'g' ]
+sentence.match(shortHand2);//['!']
+
+
+//010101010101010101010101010101010101001
+
+	<< Match All Numbers >>
+
+let movieName = "2001: A Space Odyssey";
+let numRegex = /\d/g; // Change this line
+let result = movieName.match(numRegex).length;//--> 4
+
+
+//010101010101010101010101010101010101001
+
+	<< Match All Non-Numbers >>
+	
+The shortcut to look for non-digit characters is \D. This is equal to the character class [^0-9], which looks for a single character that is not a number between zero and nine.
+
+let movieName = "2001: A Space Odyssey";
+let noNumRegex1 = /\D/g;
+let noNumRegex2 = /[^0-9]/g;
+ movieName.match(noNumRegex1).length;//-->17
+ movieName.match(noNumRegex2).length;//-->17
+
+//010101010101010101010101010101010101001
+
+	<< a Hard example of user check >>
+
+rulse: 
+	
+1.Usernames can only use alpha-numeric characters.
+
+2.The only numbers in the username have to be at the end. There can be zero or more of them at the end. Username cannot start with the number.
+
+3.Username letters can be lowercase and uppercase.
+
+4.Usernames have to be at least two characters long. A two-character username can only use alphabet letters as characters.
+
+
+let username = "a1556464";
+let userCheck = /^[a-z][a-z]+\d*$|^[a-z]\d\d+$/i; // Change this line
+let result = userCheck.test(username);//--> True
+
+
+//010101010101010101010101010101010101001
+
+	<< Match Whitespace >>
+
+EX 1:
+
+let sample = "Whitespace is important in separating words";
+let countWhiteSpace = /\s/g; // or [ \r\t\f\n\v]
+let result = sample.match(countWhiteSpace);// --> [ ' ', ' ', ' ', ' ', ' ' ]
+
+//010101010101010101010101010101010101001
+
+	<< Match Non-Whitespace Characters
+
+ /\S/ Capital s
+let sample = "Whitespace is important in separating words";
+let countNonWhiteSpace = /\S/g; // or [^ \r\t\f\n\v]
+let result = sample.match(countNonWhiteSpace).length;// 38 
+
+
+//010101010101010101010101010101010101001
+
+	<< Specify Upper and Lower Number of Matches >>
+	
+ ! Recall that you use the plus sign + to look for one or more characters and the asterisk * to look for zero or more characters. These are convenient but sometimes you want to match a certain range of patterns. !
+
+For example, to match only the letter a appearing between 3 and 5 times in the string ah, your regex would be /a{3,5}h/.
+
+let A4 = "aaaah";
+let A2 = "aah";
+let multipleA = /a{3,5}h/;
+multipleA.test(A4);// True
+multipleA.test(A2);// False
+
+
+EX 1:
+
+let ohStr = "Ohhhhh no";// or "Ohhh no" or "Ohhhhhh no"
+let ohRegex = /Oh{3,6} no/; // Change this line
+let result = ohRegex.test(ohStr);
+
+
+//010101010101010101010101010101010101001
+
+	<< Specify Only the Lower Number of Matches >>
 	
 	
-	
-		
-	
-	
-	
+
+/ha{3,}h/ //! yani az 3 ta a ta bi_nahayat !
+
+let A4 = "haaaah";
+let A2 = "haah";
+let A100 = "h" + "a".repeat(100) + "h";
+let multipleA = /ha{3,}h/;
+multipleA.test(A4);//True
+multipleA.test(A2);//False
+multipleA.test(A100);//True
+
+//010101010101010101010101010101010101001
+
+
+
+
 
 
 
