@@ -110,7 +110,13 @@ bash code and execute:
 
 
 //-------------------------------------------
+You can run javaScript in Server by this command:
 
+node app.js
+
+its way of you can append what ever you run in this command in this filename.txt :
+
+node app.js >> filename.txt 
 
 
 
