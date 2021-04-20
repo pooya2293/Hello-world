@@ -1,0 +1,4 @@
+For node version control i install nvm
+from github repository 
+
+
