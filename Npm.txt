@@ -2,3 +2,25 @@ For node version control i install nvm
 from github repository 
 
 
+for using nvm you should cd user/poriya/.nvm
+
+and run -->$ . ./nvm.sh
+
+i faced with error --> when i try to install a version of node:
+
+$ nvm install 8.0.0
+Local cache found: ${NVM_DIR}/.cache/src/node-v8.0.0/node-v8.0.0.tar.xz
+Computing checksum with sha256sum
+Checksums do not match: '3822593b6a88be095165fe7ac63af438f668cb0d5779a352cf12ba5ccc494b04' found, '258d3aa3632bbbf2a447c5d524bd7074e23aa26e2b698774ff452954f6174f1c' expected.
+Checksum check failed!
+Removing the broken local cache...
+Downloading https://nodejs.org/dist/v8.0.0/node-v8.0.0.tar.xz...
+######################################################################## 100.0%
+Computing checksum with sha256sum
+Checksums matched!
+$>./configure --prefix=/c/Users/poorya/.nvm/versions/node/v8.0.0 <
+Please use either Python 2.6 or 2.7
+nvm: install v8.0.0 failed!
+
+
+i forget the nvm and continue 
