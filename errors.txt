@@ -1,0 +1,6 @@
+in git :
+
+Error --> cannot lock ref 'HEAD': unable to resolve reference 'refs/heads/master': reference broken
+<<when i use git and bult is gone suddenly>>
+ 
+Solve --> i managed to solved this with deleting master file in git\refs\heads directory

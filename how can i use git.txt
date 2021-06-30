@@ -161,6 +161,14 @@ $ git remote add origin https://github.com/pooya2293/App-landing-page.git
 $ git branch -M main
 $ git push -u origin main
 
+<-- how can i exit(close) in message commit in git  -->
+
+Type the subject of your commit on the first line. ...
+Write a detailed description of what happened in the committed change. ...
+Press Esc and then type :wq to save and exit.
+
+
+
 <-- some cmd line offcurse its in linuxe -->
 //new foolder
 $ mkdir 
