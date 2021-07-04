@@ -4,3 +4,9 @@ Error --> cannot lock ref 'HEAD': unable to resolve reference 'refs/heads/master
 <<when i use git and bult is gone suddenly>>
  
 Solve --> i managed to solved this with deleting master file in git\refs\heads directory
+
+in samsung browser : 
+i need to inspect samsung internet browser 
+
+1- in phone go to setting -> about phone -> software information -> tab 10 times in Build number for open developer option ->  open developer option -> toggle on USB debugging 
+2- in PC open chrome -> go to  chrome://inspect/#devices -> give permetion on your phone to this computer -> open what page you want to inspect element on your phone and click inspect on PC chrome 
