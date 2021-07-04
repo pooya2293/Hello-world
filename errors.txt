@@ -1,10 +1,17 @@
 in git :
 
-Error --> cannot lock ref 'HEAD': unable to resolve reference 'refs/heads/master': reference broken
+1-Error --> cannot lock ref 'HEAD': unable to resolve reference 'refs/heads/master': reference broken
 <<when i use git and bult is gone suddenly>>
  
 Solve --> i managed to solved this with deleting master file in git\refs\heads directory
+-----------------------------------
+2-Error --> Git - fatal: Unable to create '/path/my_project/.git/index.lock': File exists
 
+i cant add any file and when i try add new file to git getting top error
+
+Solve --> rm --force ./.git/index.lock
+
+==========================
 in samsung browser : 
 i need to inspect samsung internet browser 
 
