@@ -36,3 +36,20 @@ when i try to open modular javascript i need to open it on server live-server cr
 1-npm install -g live-server ->2- live-server --open=path of index.html
 
 ===========================
+use tailwind cli
+
+1-creat tailwind.css 
+2-write : -->
+//your css code
+.helo {
+	color: red;
+}
+add tailwind
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+3-enter this in terminal :-->
+
+npx tailwindcss-cli build css/tailwind.css -o build/tailwind.css
+
