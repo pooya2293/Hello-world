@@ -83,7 +83,7 @@ and creat tow js file config named postcss , tailwind.config.js
 when i dont want to use vite and use live-server and work config.js :
 
 1-npm init -y
-2-npm i tailwindcss postcss-cli autoprefixer
+2-npm i tailwindcss postcss-cli autoprefixer postcss
 3-npx tailwind init -p
 4-creat tailwind.scss in css file and write : 
 @tailwind base;
