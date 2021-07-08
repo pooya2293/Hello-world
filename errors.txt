@@ -70,6 +70,19 @@ and creat tow js file config named postcss , tailwind.config.js
 
 5- then when you enter -> npm run dev (show index.html in server)
 
+--------------
+when i dont want to use vite and use live-server :
+
+1-npm init -y
+2-npm i tailwindcss postcss-cli autoprefixer
+3-npx tailwind init -p
+4-creat tailwind.scss in css file and write : 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+5-write in package.json instead of "test" :--> "build": "postcss ./css/tailwind.scss -o ./build/tailwindBuild.css"
+6-for each changing in config.js file you should npm run build
+and its work!!!
 ===============================
 
 all media for responsive = {
