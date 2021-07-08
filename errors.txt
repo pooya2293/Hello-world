@@ -11,6 +11,15 @@ i cant add any file and when i try add new file to git getting top error
 
 Solve --> rm --force ./.git/index.lock
 
+-------------------------------------
+i cant push getting this
+! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/pooya2293/css-Tricks.git'
+
+hint: Updates were rejected because the tip of your current branch is behind
+
+SP: i pull and then try to push --> !!!!its work!!!! 
+
 ==========================
 in samsung browser : 
 i need to inspect samsung internet browser 
@@ -71,7 +80,7 @@ and creat tow js file config named postcss , tailwind.config.js
 5- then when you enter -> npm run dev (show index.html in server)
 
 --------------
-when i dont want to use vite and use live-server :
+when i dont want to use vite and use live-server and work config.js :
 
 1-npm init -y
 2-npm i tailwindcss postcss-cli autoprefixer
@@ -82,7 +91,7 @@ when i dont want to use vite and use live-server :
 @tailwind utilities;
 5-write in package.json instead of "test" :--> "build": "postcss ./css/tailwind.scss -o ./build/tailwindBuild.css"
 6-for each changing in config.js file you should npm run build
-and its work!!!
+and its work for using config file!!!
 ===============================
 
 all media for responsive = {
