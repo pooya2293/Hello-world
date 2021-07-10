@@ -81,8 +81,9 @@ with this code we add to "devDependencies" :{
 6- then when you enter -> npm run dev (show index.html in server);
 7- snd when you done all works you can wirite in script "build":"vite build"
 8-enter npm run build 
-9-when you want to use react in this mood you should enter npm i @vitejs/plugin-react-refresh
-10-and then enter npm run dev
+9-when you want to use react in this mood you should enter npm i -D @vitejs/plugin-react-refresh
+10-npm i react react-dom
+11-and then enter npm run dev
 
 
 --------------
