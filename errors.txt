@@ -63,7 +63,8 @@ add tailwind
 npx tailwindcss-cli build css/tailwind.css -o build/tailwind.css
 
 ---------
-when i want update main.css when evry time i make changes in tailwind.css :
+!!!VITE IS AWSOME!!!!
+when i want update main.css when evry time i make changes in tailwind.css and tailwind.config.js:
 
 1-npm init -y 
 2-npm install -D tailwindcss postcss autoprefixer vite;
@@ -75,9 +76,14 @@ with this code we add to "devDependencies" :{
     "tailwindcss": "^2.2.4",
     "vite": "^2.4.1"
 }
-and creat tow js file config named postcss , tailwind.config.js
+5-and creat tow js file config named postcss , tailwind.config.js with npx tailwind init -p
 
-5- then when you enter -> npm run dev (show index.html in server)
+6- then when you enter -> npm run dev (show index.html in server);
+7- snd when you done all works you can wirite in script "build":"vite build"
+8-enter npm run build 
+9-when you want to use react in this mood you should enter npm i @vitejs/plugin-react-refresh
+10-and then enter npm run dev
+
 
 --------------
 when i dont want to use vite and use live-server and work config.js :
