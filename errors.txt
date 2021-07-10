@@ -67,7 +67,7 @@ when i want update main.css when evry time i make changes in tailwind.css :
 
 1-npm init -y 
 2-npm install -D tailwindcss postcss autoprefixer vite;
-3-in package.json in object script write "vite" 
+3-in package.json in object script write"dev": "vite" 
 4-npx tailwindcss init -p
 with this code we add to "devDependencies" :{
 	"autoprefixer": "^10.2.6",
@@ -90,7 +90,7 @@ when i dont want to use vite and use live-server and work config.js :
 @tailwind components;
 @tailwind utilities;
 5-write in package.json instead of "test" :--> "build": "postcss ./css/tailwind.scss -o ./build/tailwindBuild.css"
-6-for each changing in config.js file you should npm run build
+6-for each changing in config.js file you should npm run build but its not work for purge
 and its work for using config file!!!
 ===============================
 
